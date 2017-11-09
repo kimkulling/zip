@@ -8,6 +8,11 @@ if (MSVC)
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} /D _CRT_NONSTDC_NO_WARNINGS=1 /D _CRT_SECURE_NO_WARNINGS=1")
 endif (MSVC)
 
+if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --analyze")
+    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --analyzer-output text")
+endif ()
+
 # zip
 set(SRC src/miniz.h src/zip.h src/zip.c)
 add_library(${CMAKE_PROJECT_NAME} ${SRC})
