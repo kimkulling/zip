@@ -10,7 +10,6 @@ endif (MSVC)
 
 if (CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --analyze")
-    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} --analyzer-output text")
 endif ()
 
 # zip
